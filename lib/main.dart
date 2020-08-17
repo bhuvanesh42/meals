@@ -12,10 +12,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'meals',
       theme: ThemeData(
-        primaryColor: Colors.blue
-      ),
+          primaryColor: Colors.blue,
+          accentColor: Colors.amber,
+          canvasColor: Color.fromRGBO(251, 254, 253, 1),
+          fontFamily: 'Katibeh',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              body1: TextStyle(color: Color.fromRGBO(24, 23, 22, 1)),
+              body2: TextStyle(color: Color.fromRGBO(24, 23, 22, 1)),
+              title: TextStyle(fontSize: 20,fontFamily: 'katibeh',color: Colors.white)),),
       home: CategoriesScreen(),
-
     );
   }
 }

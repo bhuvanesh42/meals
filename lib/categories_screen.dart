@@ -8,9 +8,10 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meals'),
+        title: Text('Meals',style: Theme.of(context).textTheme.title),
       ),
       body: GridView(
+        padding: EdgeInsets.all(20),
         children: Dummy_values.map((data) => CatrgoryItem(data.title, data.color))
             .toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
