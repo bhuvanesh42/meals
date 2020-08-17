@@ -1,16 +1,20 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:meals/rescipi.dart';
+import 'file:///D:/Flutter/meals/lib/Screen/rescipi.dart';
 
 class CatrgoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
 
-  CatrgoryItem(this.title, this.color);
+  CatrgoryItem(this.id, this.title, this.color);
   void selectoritem(BuildContext ctx){
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_){
-      return Recipe();
-    }));
+    Navigator.of(ctx).pushNamed(
+      Recipe.rountname, arguments: {
+        'id' : id, 'title' : title
+    }
+    );
+
 
   }
 
