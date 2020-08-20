@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:meals/Models/meals.dart';
 import 'package:meals/dummy_vales.dart';
+
 import 'file:///D:/Flutter/meals/lib/widgets/meal_item.dart';
 
-class Recipe extends StatelessWidget {
+class Recipe extends StatefulWidget {
   static const rountname = '/category_meals';
+  final List<Meals> availablemeals;
 
+  Recipe(this.availablemeals);
+
+  @override
+  _RecipeState createState() => _RecipeState();
+}
+
+class _RecipeState extends State<Recipe> {
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +22,7 @@ class Recipe extends StatelessWidget {
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categorytitle = routarea['title'];
     final categoryid = routarea['id'];
-    final categorymeals = DUMMY_MEALS.where((meals) {
+    final categorymeals =  widget.availablemeals.where((meals) {
       return meals.categories.contains(categoryid);
     }).toList();
     return Scaffold(

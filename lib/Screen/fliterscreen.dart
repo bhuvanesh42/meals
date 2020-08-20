@@ -3,6 +3,10 @@ import 'package:meals/widgets/drawer.dart';
 
 class FilterScreen extends StatefulWidget {
   static const routname = '/fliterscreen';
+  final Function savefilters;
+  final Map<String , bool> currentfilters;
+
+  FilterScreen(this.currentfilters, this.savefilters);
 
   @override
   _FilterScreenState createState() => _FilterScreenState();
@@ -25,10 +29,33 @@ class _FilterScreenState extends State<FilterScreen> {
   }
 
   @override
+  void initState() {
+    _vegetarian= widget.currentfilters['vegetarian'];
+    _vegan= widget.currentfilters['vegan'];
+    _lactosefree= widget.currentfilters['lactose'];
+    _glutenfree= widget.currentfilters['gluten'];
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('your filters'),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.save),
+            onPressed: () {
+              final selectedmeal = {
+                'gluten': _glutenfree,
+                'lactose': _lactosefree,
+                'vegan': _vegan,
+                'vegetarian': _vegetarian
+              };
+              widget.savefilters(selectedmeal);
+            },
+          )
+        ],
       ),
       drawer: DrawerMain(),
       body: Column(
@@ -37,7 +64,7 @@ class _FilterScreenState extends State<FilterScreen> {
             padding: EdgeInsets.all(20),
             child: Text(
               'Adjust your meals',
-              style: Theme.of(context).textTheme.title,
+              style: Theme.of(context).textTheme.subtitle,
             ),
           ),
           Expanded(
@@ -59,31 +86,33 @@ class _FilterScreenState extends State<FilterScreen> {
                 'vegetarian-free',
                 'only vegetarian-free meals',
                 _vegetarian,
-                    (newvalue) {
+                (newvalue) {
                   setState(
-                        () {
+                    () {
                       _vegetarian = newvalue;
                     },
                   );
                 },
-              ), buildSwitchtitle(
+              ),
+              buildSwitchtitle(
                 'vegan-free',
                 'only vegan-free meals',
                 _vegan,
-                    (newvalue) {
+                (newvalue) {
                   setState(
-                        () {
+                    () {
                       _vegan = newvalue;
                     },
                   );
                 },
-              ), buildSwitchtitle(
+              ),
+              buildSwitchtitle(
                 'lactose-free',
                 'only lactose-free meals',
                 _lactosefree,
-                    (newvalue) {
+                (newvalue) {
                   setState(
-                        () {
+                    () {
                       _lactosefree = newvalue;
                     },
                   );

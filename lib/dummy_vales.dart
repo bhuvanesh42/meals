@@ -4,54 +4,72 @@ import 'package:meals/Models/meals.dart';
 
 const DUMMY_CATEGORIES = const [
   Category(
-    id: 'c1',
-    title: 'Italian',
-    color: Colors.purple,
-  ),
+      id: 'c1',
+      title: 'Italian',
+      color: Colors.purple,
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2017/09/30/15/10/pizza-2802332_960_720.jpg'),
   Category(
     id: 'c2',
     title: 'Quick & Easy',
     color: Colors.red,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2020/06/14/03/38/barbecue-5296433_960_720.jpg',
   ),
   Category(
     id: 'c3',
     title: 'Hamburgers',
     color: Colors.orange,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2016/03/05/19/02/abstract-1238247_960_720.jpg',
   ),
   Category(
     id: 'c4',
     title: 'German',
     color: Colors.amber,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2019/08/13/17/06/cheese-4403820_960_720.jpg',
   ),
   Category(
     id: 'c5',
     title: 'Light & Lovely',
     color: Colors.blue,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2014/12/20/14/03/vegetables-573961_960_720.jpg',
   ),
   Category(
     id: 'c6',
     title: 'Exotic',
     color: Colors.green,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2014/05/03/14/21/meals-337073_960_720.jpg',
   ),
   Category(
     id: 'c7',
     title: 'Breakfast',
     color: Colors.lightBlue,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2016/11/06/23/31/breakfast-1804457_960_720.jpg',
   ),
   Category(
     id: 'c8',
     title: 'Asian',
     color: Colors.lightGreen,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2020/01/17/16/42/food-4773380_960_720.jpg',
   ),
   Category(
-    id: 'c9',
-    title: 'French',
-    color: Colors.pink,
-  ),
+      id: 'c9',
+      title: 'French',
+      color: Colors.pink,
+      imageUrl:
+          'https://cdn.pixabay.com/photo/2015/12/08/00/26/food-1081707_960_720.jpg'),
   Category(
     id: 'c10',
     title: 'Summer',
     color: Colors.teal,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2017/01/31/09/30/raspberry-2023404_960_720.jpg',
   ),
 ];
 const DUMMY_MEALS = const [
